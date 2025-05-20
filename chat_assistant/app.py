@@ -1,7 +1,8 @@
-# app.py
+# app.py with support for RAG functionality
 from flask import Flask, request, render_template, jsonify, session, redirect, url_for, flash
 from tenant_assistant import WebChatbot, TenantConfig
 import os
+import traceback
 
 app = Flask(__name__)
 app.secret_key = os.urandom(24)
@@ -85,16 +86,27 @@ def handle_query():
     query = data.get('query', '')
     tenant_id = session['tenant_id']
 
-    # Initialize chatbot for this tenant
-    chatbot = WebChatbot(tenant_id)
+    try:
+        # Initialize chatbot for this tenant
+        chatbot = WebChatbot(tenant_id)
 
-    # Process query
-    response = chatbot.process_query(query)
+        # Process query
+        response = chatbot.process_query(query)
 
-    return jsonify({
-        "response": response,
-        "tenant": session['tenant_name']
-    })
+        return jsonify({
+            "response": response,
+            "tenant": session['tenant_name']
+        })
+    except Exception as e:
+        error_message = f"Error processing query: {str(e)}"
+        print(error_message)
+        traceback.print_exc()
+
+        return jsonify({
+            "response": f"I apologize, but I'm experiencing technical difficulties. Error: {str(e)}",
+            "tenant": session['tenant_name'],
+            "error": True
+        })
 
 
 if __name__ == '__main__':
