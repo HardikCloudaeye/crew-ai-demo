@@ -1,0 +1,10 @@
+{
+  "cloudaeye": {
+    "name": "Cloudaeye",
+    "password": "cloudaeye123",
+    "doc_urls": [
+      "https://www.cloudaeye.com/about-us.html",
+      "https://docs.cloudaeye.com/index.html"
+    ]
+  }
+}

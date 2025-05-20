@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Web-Enhanced Chat Assistant</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        .tenant-list {
+            margin-top: 20px;
+        }
+        .tenant-item {
+            margin: 10px 0;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .tenant-item:hover {
+            background-color: #f5f5f5;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to Web-Enhanced Chat Assistant</h1>
+    <p>Select your organization to begin:</p>
+
+    <div class="tenant-list">
+        {% for tenant_id, tenant_name in tenants %}
+        <div class="tenant-item" onclick="selectTenant('{{ tenant_id }}')">
+            {{ tenant_name }}
+        </div>
+        {% endfor %}
+    </div>
+
+    <script>
+        function selectTenant(tenantId) {
+            fetch('/login', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: `tenant_id=${tenantId}`
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    if (data.redirect) {
+                        window.location.href = data.redirect;
+                    } else {
+                        window.location.href = '/chat';
+                    }
+                } else {
+                    alert('Error: ' + data.error);
+                }
+            });
+        }
+    </script>
+</body>
+</html>
