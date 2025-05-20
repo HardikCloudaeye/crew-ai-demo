@@ -41,12 +41,14 @@ Web-Enhanced Chat Assistant is a CrewAI-powered application that helps support a
 5. Access the web interface at `http://localhost:5000`
 
 ### Simple UI Interface:
-1. Home 
-![Home Screen](img_2.png)
-2. Authentication while selecting organisation
-![Authentication Screen](img_1.png)
-3. Chat with the organisation 
-![Chat Interface](img.png)
+### Home 
+<img src="img_2.png" alt="Home Screen" width="400"/>
+
+### Authentication while selecting organisation
+<img src="img_1.png" alt="Authentication Screen" width="400"/>
+
+### Chat with the organisation 
+<img src="img.png" alt="Chat Interface" width="400"/>
 
 ## Configuration
 
