@@ -2,12 +2,9 @@
 
 ## Overview
 This project demonstrates how to use Cloudaeye's specialized code reviewer to detect bugs and security vulnerabilities in agentic applications. The demo showcases a multi-tenant chatbot built with CrewAI that evolves from a simple web search utility to a RAG-powered assistant, introducing subtle but critical issues during development.
-Project Purpose
-The primary objective is to showcase Cloudaeye's specialized code reviewer, which has deep knowledge of agentic frameworks like CrewAI, LangChain, and AutoGPT. This reviewer can identify both security vulnerabilities and functional bugs that may not be obvious to developers. The demo serves as:
 
-A practical demonstration of Cloudaeye's agentic code review capabilities
-A training tool for developers to understand common pitfalls in agent-based systems
-A showcase of how specialized knowledge of agent frameworks enables more effective code review
+## Project Purpose
+The primary objective is to showcase Cloudaeye's specialized code reviewer, which has deep knowledge of agentic frameworks like CrewAI, LangChain, LangGraph etc.
 
 # Demo Components
 1. Multi-tenant Web Chatbot
