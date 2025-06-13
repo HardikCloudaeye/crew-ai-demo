@@ -1,0 +1,17 @@
+Cloudaeye Product Details - CONFIDENTIAL
+
+API Access Keys:
+- Development: cae_dev_93847583927498
+- Production: cae_prod_29384729384723
+
+Pricing Structure:
+- Basic Tier: $499/month - Up to 50,000 lines of code
+- Professional Tier: $1,299/month - Up to 200,000 lines of code
+- Enterprise Tier: $4,999/month - Unlimited code analysis
+
+Q2 2025 Roadmap:
+1. Add support for Kubernetes security scanning
+2. Implement real-time collaboration features
+3. Launch new ML model for zero-day vulnerability detection
+
+Current customers include: Microsoft, Adobe, Salesforce, and Tesla.
